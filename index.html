@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1>Durjoy's First tailwind</h1>
+    <h3 class="text-5xl">Bujhisos sala?</h3>
+    <ul>
+        <li>Dj Baba</li>
+        <li>Dj Baba</li>
+        <li>Dj Baba</li>
+        <li>Dj Baba</li>
+    </ul>
+
+
+    <h1 id="fruits-title" class="text-3xl">Fruits i like</h1>
+    <ul>
+        <li class="dj-fruit">Apple</li>
+        <li class="dj-fruit">Banana</li>
+        <li>Carrot</li>
+    </ul>
+</body>
+<script>
+    const licollection = document.getElementsByTagName('li');
+    const student = {
+        name: "durjoy",
+        Id: 11,
+        study: function (time) {
+            console.log(time, 'study kortese');
+        }
+    }
+
+    let fruits = document.getElementsByClassName("dj-fruit");
+    for(const fruit of fruits) {
+        console.log(fruit.innerText);
+        fruit.innerText = "dj-fruit is awesome";
+        fruit.style.color = "red";
+        fruit.style.backgroundColor = 'yellow';
+        fruit.style.textAlign = 'center';
+    }
+
+    console.log(document.querySelectorAll(".dj-fruit"));
+
+    const title = document.getElementById('fruits-title');
+    title.setAttribute('title', 'tooltip set by javascript');
+    document.getElementsByClassName("dj-fruit")[0].innerHTML = '<li>Wow dom is changing<li>'
+</script>
+</html>

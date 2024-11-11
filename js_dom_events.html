@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM EVENTS</title>
+</head>
+<body>
+    <h1 onclick="console.log('I am clicked')">DOM er ajke</h1>
+    <button onclick="console.log(10)">Click me</button>
+    <button ondblclick="console.log(100)"
+    onclick="document.body.style.backgroundColor = 'yellow'">Make Yellow</button>
+    <button id="red" onclick="makeRed()">Make Red</button>
+    <button id="blue">Make Blue</button>
+    <button id="purple">Make Purple</button>
+    <button id="pink">Make Pink</button>
+    <button id="green">Make Green</button>
+    <button id="orange">Make Orange</button>
+
+    <h1 id="default">Default Text</h1>
+    <button onclick="handleClick()">Handle event</button>
+    
+    <p id="input-text-display">Default Input Text</p>
+    <input type="text" id="input-field">
+    <button id="btn-update">Update</button>
+
+    <div id="comment-container">
+    <p id="lorem">Lorem ipsum dolor sit amet.</p>
+    <p id="lorem2">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+        <br>
+        <button id="post">Post</button>
+    </div>
+
+    <script src="js_dom_events.js"></script>
+</body>
+</html>

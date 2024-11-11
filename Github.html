@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #iteam-2{
+            border: 2px solid black;
+        }
+        #body{
+            border: 2px solid orange;
+        }
+        #container{
+            border: 2px solid green;
+        }
+        #ul{
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1 id="secret-info">My secret Info</h1>
+    <input type="text" placeholder="Please type 'delete' " id="input">
+    <button id="btn-delete" disabled>Delete</button><br><br>
+
+    <h1 id="container">Exploring Event Bubble</h1>
+    <ul id="ul">
+        <li id="iteam-1">Lorem, ipsum.</li>
+        <li id="iteam-2">Lorem, ipsum.</li>
+        <li id="iteam-3">Lorem, ipsum dolor.</li>
+        <li id="iteam-4">Lorem ipsum dolor sit.</li>
+        <li id="iteam-5">Lorem ipsum dolor sit amet.</li>
+    </ul>
+
+    <script>
+
+        document.getElementById('input').addEventListener('keyup', function(event) {
+            const text = event.target.value;
+            console.log(text);
+            const deletebutton = document.getElementById('btn-delete');
+            if(text === 'delete'){
+                deletebutton.removeAttribute('disabled');
+            }
+            else{
+                deletebutton.setAttribute('disabled', true);
+            }
+        })
+
+        document.getElementById('btn-delete').addEventListener('click', function() {
+            const secret = document.getElementById('secret-info');
+            secret.style.display = 'none';
+        })
+
+        //event bubble:
+        document.getElementById('iteam-2').addEventListener('click', function(event){
+            console.log('Iteam clicked');
+            event.stopPropagation();
+        })
+        document.getElementById('iteam-2').addEventListener('click', function(event){
+            console.log('Iteam 2nd clicked');
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('iteam-2').addEventListener('click', function(event){
+            console.log('Iteam 3rd clicked');
+        })
+        document.getElementById('ul').addEventListener('click', function(){
+            console.log('Ul clicked');
+        })
+        document.getElementById('container').addEventListener('click', function(){
+            console.log('Container clicked');
+        })
+        document.getElementById('body').addEventListener('click', function(){
+            console.log('Body clicked');
+        })
+
+    </script>
+</body>
+</html>
