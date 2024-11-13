@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1>
+        Welcome to Home page
+    </h1>
+
+    <main class="flex justify-center">
+        <div class="mockup-phone">
+            <div class="camera"></div>
+            <div class="display">
+              <div class="artboard artboard-demo phone-3">
+                <!-- Available balance -->
+
+                <div class="stats shadow">
+                    <div class="stat">
+                      <div class="stat-value" id="balance">89400</div>
+                      <div class="stat-desc">Available Balance</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+                <!-- User action button -->
+                 <div>
+                    <button id="btn-show-add-money" class="btn btn-lg">Add Money</button>
+                    <button id="btn-show-cash-out" class="btn btn-lg">Cash Out</button>
+                    <button id="btn-show-transiction" class="btn btn-lg">Transiction</button>
+                </div>
+
+                <div class="divider"></div>
+                <!-- Add money form -->
+                <div id="add-money-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Amount</span>
+                        </label>
+                        <input id="input-add-money" type="text" placeholder="Amount" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Pin</span>
+                        </label>
+                        <input id="pin-num" type="password" placeholder="Pin Number" class="input input-bordered" autocomplete="off" required />
+                        
+                      </div>
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary" id="add-btn">Add Money</button>
+                      </div>
+                    </form>
+                  </div>
+                <!-- Add money end -->
+
+                  <!-- Cash out start -->
+                  <div id="cash-out-form" class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Amount</span>
+                        </label>
+                        <input id="input-cash-out" type="text" placeholder="Amount" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Pin</span>
+                        </label>
+                        <input id="cash-out-pin-num" type="password" placeholder="Pin Number" class="input input-bordered" autocomplete="off" required />
+                        
+                      </div>
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary" id="cash-out-btn">Cash Out</button>
+                      </div>
+                    </form>
+                  </div>
+
+                   <!-- Cash out end -->
+
+                    <!-- Transiction start -->
+                      <div id="Transiction-section" class="hidden">
+                        <h2 class="text-3xl">Transiction History</h2>
+                        <div id="transaction-container" class="space-y-3"></div>
+                      </div>
+                    <!-- Transiction end -->
+
+            </div>
+        </div>
+      </div>
+</main>
+<script src="home.js"></script>
+<script src="utilities.js"></script>
+</body>
+</html>
